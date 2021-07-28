@@ -15,9 +15,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
-          cache-dependency-path: |
-            packages/components/package.json
-            packages/app/package.json
+          cache-dependency-path: yarn.lock
+
       - run: npm i -g yarn@1
       - run: yarn config set network-timeout 300000
       - run: yarn --frozen-lockfile
