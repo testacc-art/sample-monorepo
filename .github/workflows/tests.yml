@@ -1,5 +1,5 @@
 name: tests
-on: [push, pull_request]
+on: [workflow_dispatch]
 jobs:
   tests:
     name: node ${{ matrix.node-version }} / ${{ matrix.os }}
