@@ -11,10 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: dmitry-shibanov/setup-node@v-dmshib/add-cache-dependencies-path
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
+          cache-dependency-path: 'packages/app/package.json'
       - run: npm i -g yarn@1
       - run: yarn config set network-timeout 300000
       - run: yarn --frozen-lockfile
