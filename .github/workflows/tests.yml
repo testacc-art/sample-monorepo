@@ -15,7 +15,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - run: npm i -g yarn@1
-      - run: yarn config set network-timeout 300000
-      - run: yarn --frozen-lockfile
-      - run: yarn test
+      - name: components
+        run: npm install
+        working-directory: packages/components
+        
+      - name: components
+        run: npm install
+        working-directory: packages/app
+        
+      - name: components
+        run: npm install
+        working-directory: packages/server
