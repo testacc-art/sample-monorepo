@@ -20,11 +20,4 @@ jobs:
       - name: components
         run: npm install
         working-directory: packages/components
-        
-      - name: app
-        run: npm install
-        working-directory: packages/app
-        
-      - name: server
-        run: npm install
-        working-directory: packages/server
+      
