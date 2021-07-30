@@ -15,9 +15,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
-          cache-dependency-path: |
-            packages/app/package.json
-            packages/components/package.json
+          cache-dependency-path: '**/package.json'
 
       - run: npm i -g yarn@1
       - run: yarn config set network-timeout 300000
